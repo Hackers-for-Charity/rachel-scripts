@@ -11,7 +11,7 @@
 # on the eth0 interface. Once run, you must leave the script in the 
 # scripts folder located here:  /home/pi/scripts/setwanip.sh
 ##############################################################################
-mdkir -p /home/pi/scripts
+mkdir -p /home/pi/scripts
 cat > /home/pi/scripts/setwanip.sh << 'EOF'
 #!/bin/bash
 newip=$(/sbin/ifconfig |grep -A1 "eth0"| awk '{ if ( $1 == "inet" ) { print $2 }}'|cut -f2 -d":")
